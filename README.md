@@ -2,6 +2,8 @@
 
 这是一个用于测试 Microsoft 365 webhook 功能的演示项目，主要测试邮件接收和 Teams 聊天通知的 webhook 功能。
 
+同样适用于由世纪互联运营的Microsoft 365。世纪互联版本的测试地址：[https://www.majun.fun:3006](https://www.majun.fun:3006/)
+
 ## 功能特点
 
 - 接收和处理 Microsoft 365 邮件通知
