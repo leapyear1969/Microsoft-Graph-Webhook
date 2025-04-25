@@ -1,0 +1,303 @@
+/* 全局样式 */
+:root {
+  --primary-color: #0078d4;
+  --secondary-color: #2b88d8;
+  --success-color: #107c10;
+  --warning-color: #ff8c00;
+  --error-color: #d13438;
+  --light-gray: #f3f2f1;
+  --gray: #8a8886;
+  --dark-gray: #201f1e;
+  --background-color: #ffffff;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background-color: var(--light-gray);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#user-info {
+  font-size: 14px;
+}
+
+/* 主体内容 */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 控制面板 */
+.control-panel {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.panel-section {
+  margin-bottom: 20px;
+}
+
+.panel-section h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+button:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+}
+
+.subscription-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.clear-btn {
+  background-color: var(--warning-color);
+}
+
+.clear-btn:hover {
+  background-color: #e07b00;
+}
+
+/* 通知区域 */
+.notifications-panel {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.panel-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#connection-status {
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.status-已连接 {
+  color: #00ff00;
+}
+
+.status-正在连接 {
+  color: #ffff00;
+}
+
+.status-连接失败 {
+  color: #ff0000;
+}
+
+.notification-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification-badge {
+  background-color: white;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+#notifications {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+
+/* 通知卡片 */
+.notification-card {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border-left: 4px solid var(--gray);
+}
+
+.notification-card.email {
+  border-left-color: var(--primary-color);
+}
+
+.notification-card.teams {
+  border-left-color: var(--success-color);
+}
+
+.notification-card.error {
+  border-left-color: var(--error-color);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.03);
+  font-size: 14px;
+}
+
+.notification-type {
+  font-weight: 600;
+}
+
+.notification-time {
+  color: var(--gray);
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.notification-from {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.notification-message {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.email-subject {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.email-preview {
+  color: var(--dark-gray);
+}
+
+.teams-content {
+  color: var(--dark-gray);
+}
+
+/* 底部状态栏 */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+/* 加载指示器 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.loading::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

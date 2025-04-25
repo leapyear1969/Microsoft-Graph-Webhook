@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Graph Webhook Demo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="app-title">Microsoft Graph Webhook Demo</div>
+            <div class="user-section">
+                <div id="user-info">Not signed in</div>
+                <button id="loginButton">Sign In</button>
+                <button id="logoutButton" style="display: none;">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h2>Subscriptions</h2>
+                    <div class="button-group">
+                        <button id="emailSubscriptionButton" class="subscription-btn" disabled>
+                            <i class="fas fa-envelope"></i> Subscribe to Email
+                        </button>
+                        <button id="teamsSubscriptionButton" class="subscription-btn" disabled>
+                            <i class="fas fa-comments"></i> Subscribe to Teams
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h2>Notifications</h2>
+                    <div class="button-group">
+                        <button id="clearNotificationsButton" class="clear-btn" disabled>
+                            <i class="fas fa-trash-alt"></i> Clear Notifications
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h2>Status</h2>
+                    <div id="status-info">
+                        <p>Events connection: <span id="events-connection-status">Disconnected</span></p>
+                        <p>Email subscription: <span id="email-subscription-status">Not active</span></p>
+                        <p>Teams subscription: <span id="teams-subscription-status">Not active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notifications-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Real-time Notifications</h2>
+                        <span id="connection-status">Disconnected</span>
+                    </div>
+                    <div class="notification-stats">
+                        <span>Total: <span id="notification-count" class="notification-badge">0</span></span>
+                    </div>
+                </div>
+                <div id="notifications">
+                    <!-- Notifications will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Microsoft Graph Webhook Demo | Using Microsoft Graph API</p>
+    </footer>
+
+    <script src="js/client.js"></script>
+</body>
+</html> 

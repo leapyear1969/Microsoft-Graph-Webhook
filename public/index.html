@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 Webhook Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Microsoft 365 Webhook Demo</h1>
+            <div class="auth-section">
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span class="user-name"></span>
+                    <span class="user-email"></span>
+                </div>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="btn primary" type="button">登录</button>
+                    <button id="logoutBtn" class="btn secondary" style="display: none;" type="button">注销</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="subscription-panel" style="display: none;">
+            <h2>订阅管理</h2>
+            <div class="subscription-buttons">
+                <button id="createMailSubscription" class="btn primary">创建邮件订阅</button>
+                <button id="createTeamsSubscription" class="btn primary">创建 Teams 订阅</button>
+                <button id="listSubscriptions" class="btn secondary">查看所有订阅</button>
+            </div>
+            <div id="subscriptionList" class="subscription-list">
+                <!-- 订阅列表将通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+        
+        <div class="notification-section">
+            <h2>实时通知</h2>
+            <div class="notification-container" id="notification-container">
+                <!-- 通知消息将通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 状态提示 -->
+    <div id="statusToast" class="status-toast" style="display: none;"></div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
